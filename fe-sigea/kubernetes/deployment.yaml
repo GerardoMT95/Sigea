@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sigea
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: sigea
+      env: develop
+      tier: frontend
+      module: mvc
+  template:
+    metadata:
+      labels:
+        app: sigea
+        env: develop
+        tier: frontend
+        module: mvc
+    spec:
+      imagePullSecrets:
+        - name: registry-cred
+      containers:
+      - name: sigea
+        image: #HIDDEN#
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 20
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 20
+        #envFrom:
+        # - configMapRef:
+        #    name: env-properties
+        env:
+        - name: JAVA_OPTS
+          value: -Xms200m -Xmx1000m
+        - name: WSO2_APPLICATION_CONSUMER_KEY
+          valueFrom:
+            secretKeyRef:
+              name: sigeaweb-secrets
+              key: wso2-application-client-id
+        - name: WSO2_APPLICATION_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: sigeaweb-secrets
+              key: wso2-application-client-secret
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        volumeMounts:
+        - mountPath: /usr/local/tomcat/conf/SigeaWeb.properties
+          name: config-vol
+          subPath: SigeaWeb.properties
+      volumes:
+      - name: config-vol
+        configMap:
+          name: sigea-cm

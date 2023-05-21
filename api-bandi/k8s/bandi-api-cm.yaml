@@ -1,0 +1,69 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+    name: bandi-api-cm
+data:
+    application.yml: |
+        spring:
+            application:
+              name: bandi-api
+        server:
+            port: 8080
+            servlet:
+                contextPath: /
+        management:
+            endpoints:
+              web:
+                exposure:
+                  include: health, metrics, prometheus
+            metrics:
+              tags:
+                application: ${spring.application.name}
+        api:
+          bandi:
+            monitoraggio:
+                      enabled: true
+                      url: ${api_monitoraggio_url}
+                      client_id: ${api_monitoraggio_clientId}
+                      client_secret: ${api_monitoraggio_clientSecret}
+        mock:
+          bandi:
+            items:
+            -
+              id_bando: 1
+              nome_bando: Bando 1
+            -
+              id_bando: 2
+              nome_bando: Bando 2
+            -
+              id_bando: 3
+              nome_bando: Bando 3
+          progetti:
+            items:
+            -
+              id_progetto: 1
+              titolo_progetto: progetto 1
+              id_bando: 3
+              nome_bando: Nome bando 3
+              id_impresa: 23423
+              codice_fiscale: RCCCMD91R08H096O
+              denominazione: Il progetto iniziale
+              forma_partecipazione: Singola
+            -
+              id_progetto: 2
+              titolo_progetto: progetto 2
+              id_bando:
+              nome_bando:
+              id_impresa: 23
+              codice_fiscale: RCCCMD91R08H0961
+              denominazione: Il progetto finale
+              forma_partecipazione: Singola
+            -
+              id_progetto: 2
+              titolo_progetto: progetto 2
+              id_bando:
+              nome_bando:
+              id_impresa: 23
+              codice_fiscale: RCCCMD91R08H096O
+              denominazione: Il progetto finale
+              forma_partecipazione: Singola

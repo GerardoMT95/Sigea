@@ -1,0 +1,81 @@
+spring:
+  application:
+    name: bandi-api 
+server:
+    port: 9010
+    servlet:
+        contextPath: /bandi-api   
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name}
+api:
+  bandi:
+    monitoraggio:
+              enabled: false
+              url: #HIDDEN#
+              client_id: #HIDDEN#
+              client_secret: #HIDDEN#
+mock:
+  bandi:
+    items:
+    -
+      id_bando: 1
+      nome_bando: Bando 1
+    -
+      id_bando: 2
+      nome_bando: Bando 2
+    -
+      id_bando: 3
+      nome_bando: Bando 3
+    - 
+      id_bando: 4
+      nome_bando: Bando 4
+  progetti:
+    items:
+    -
+      id_progetto: 1
+      titolo_progetto: progetto 1
+      id_bando: 3
+      nome_bando: Nome bando 3
+      id_impresa: 23423
+      codice_fiscale: #HIDDEN#
+      denominazione: Il progetto iniziale
+      forma_partecipazione: Singola
+    -
+      id_progetto: 2
+      titolo_progetto: progetto 2
+      id_bando: 2
+      nome_bando: bando 2
+      id_impresa: 23
+      codice_fiscale: #HIDDEN#
+      denominazione: Il progetto finale
+      forma_partecipazione: Singola
+    -
+      id_progetto: 2
+      titolo_progetto: progetto 2
+      id_bando: 2
+      nome_bando: bando 2
+      id_impresa: 23
+      codice_fiscale: #HIDDEN#
+      denominazione: Il progetto finale
+      forma_partecipazione: Singola    
+    -
+      id_progetto: 3
+      titolo_progetto: progetto 2
+      id_bando: 3
+      nome_bando: bando 3 
+      id_impresa: 23
+      codice_fiscale: #HIDDEN#
+      denominazione: Il progetto finale
+      forma_partecipazione: Singola
+log4j:
+    logger:
+        org:
+            hibernate:
+                SQL: DEBUG
+                type: DEBUG

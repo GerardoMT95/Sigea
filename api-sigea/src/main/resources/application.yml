@@ -1,0 +1,167 @@
+﻿server:
+   port: 9292
+   servlet:
+      contextPath: /SigecAPI
+spring:
+   servlet:
+      multipart:
+        max-file-size: 500MB
+        max-request-size: 500MB
+   datasource:
+      jdbcurl: jdbc:postgresql://#HIDDEN#:5432/postgres?current_schema=sigec
+      username: postgres
+      password: postgres
+   oracle-datasource:
+      username: turismo
+      password: tur1sm0
+      jdbcurl: jdbc:oracle:thin:@//#HIDDEN#:1521/DBTURIT  
+      driver-class-name: oracle.jdbc.OracleDriver    
+   jpa:
+      generate-ddl: false
+      show-sql: true
+      properties:
+         hibernate:
+            dialect: it.indra.SigecAPI.extjpa.CustomPostgreSqlDialect
+            show-sql: true
+            jdbc:
+               lob:
+                  non_contextual_creation: true
+      devtools:
+         remote:
+            secret: mysecret
+   oracle-jpa:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
+        use-new-id-generator-mappings:  false
+        ddl-auto: none
+        dataSourceClassName: oracle.jdbc.pool.OracleDataSource
+        naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        naming_physical_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+   activemq:
+    broker-url: tcp://#HIDDEN#:61616
+    
+    user: admin
+    password: admin
+    non-blocking-redelivery: true
+    packages:
+      trust-all: true
+    close-timeout: 10
+    pool:
+      block-if-full: true
+      block-if-full-timeout: -1
+      enabled: false
+      idle-timeout: 30000
+      max-connections: 1
+      time-between-expiration-check: -1
+      use-anonymous-producers: true
+pugliaevents:
+   ownerList: 51878 
+filesystem:
+   repository: 
+      root: D://opt//sigea
+      image: immagini
+      document: documenti
+      publication: pubblicazioni
+   tmpDirectory: C://temp/
+DIRECTURL:
+   SERVICEDMS:
+      BASEPATH: #HIDDEN#
+   UTENTISERVICE:
+      BASEPATH: #HIDDEN#
+   MAIL:
+      BASEPATH: #HIDDEN#
+mail:
+  pugliapromozione: #HIDDEN#
+messages:
+  MODIFICA: MODIFICA
+  INSERIMENTO: INSERIMENTO
+  CANCELLAZIONE: CANCELLAZIONE
+  Redattore_di: Redattore di
+  Creazione_Evento: Creazione Evento
+  Tipologia: Tipologia
+  Dati_Generali: Dati Generali
+  Ticket: Ticket
+  Location: Location
+  Immagini: Immagini
+  Documenti: Documenti
+  Contatti: Contatti
+  Relazioni: Relazioni
+  Periodi: Periodi
+  Stato: Stato
+  Bandi: Bandi
+  Accessibilita: Accessibilita
+  Attribuzioni: Attribuzioni
+  Caratteristiche: Caratteristiche
+# Esportazioni metriche via actuator ed aggiunta ep per prometheus. 
+# Configurazione a carico poi di CA per abilitare o disabilitare le funzionalità
+management:
+   endpoints:
+      web:
+         exposure:
+           include: "*"   
+   endpoint:
+      metrics:
+         enabled: false
+      prometheus:
+         enabled: false
+      export:
+         propetheus:
+           enabled: false    
+# proprieta esposte nell' /actuator/info        
+info:
+  app:
+    name: Api Sigec
+    description: 
+  # build properties from maven
+  build:
+    groupId: '@project.groupId@'
+    artifact: '@project.artifactId@'
+    name: '@project.name@'
+    version: '@project.version@'
+#configurazione servizio email
+jms:
+  token:
+    enabled: false
+    url: #HIDDEN#
+    clientId: #HIDDEN#
+    clientSecret: #HIDDEN#
+  id: 1
+  templateName : email_verify.vm
+  tenant:
+    id: 000000
+  queue:
+     channel: mail-queue
+     evento: evento-sigea
+     attivita: attivita-sigea
+     newVip:
+        evento: newVip-evento-sigea
+        attivita: newVip-attivita-sigea
+  newVipEnabled: true  
+  urlservice : #HIDDEN#
+  #seconds to next retry
+  polling : 30
+  #number of retry - 1 day
+  timeout : 2880
+  emailConduzione: #HIDDEN#  
+  params: '{companyID: "#HIDDEN#", domainFE: "#HIDDEN#", companyName: "#HIDDEN#", domainLogo: "#HIDDEN#", url: "#HIDDEN#"}'
+  mail:
+      confId: 1
+      from: #HIDDEN#
+      configurazioneEmail: '[{"id":"Segnalazione","oggetto":"Segnalazione ricevuta","idTemplate":"109"},{"id":"InModifica","oggetto":"Evento spostato in modifica","idTemplate":"110"},{"id":"Rivalidato","oggetto":"Evento rivalidato","idTemplate":"154"},{"id":"Respinto","oggetto":"Evento respinto","idTemplate":"152"},{"id":"Revocato","oggetto":"Evento revocato","idTemplate":"151"},{"id":"Annullato","oggetto":"Evento annullato","idTemplate":"153"},{"id":"Pubblicato","oggetto":"Evento pubblicato","idTemplate":"107"},{"id":"ErrorePubblicazione","oggetto":"Errore","idTemplate":"201"},{"id":"ErroreSpubblicazione","oggetto":"Errore","idTemplate":"202"},{"id":"Ripubblicazione","oggetto":"Ripubblicazione evento","idTemplate":"108"}]'
+      engine:
+        name: mustache
+constants:
+  migration:
+    owner: 51878
+    riconciliare: true
+    attivita: 
+      id: 62291
+      denominazione: #HIDDEN#
+    basePath:      
+      attachedFile: #HIDDEN#
+      territorialService: #HIDDEN#
+    limitIteration:
+      events: 40
+      related: 40
+      events_del: 2
+    

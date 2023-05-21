@@ -1,0 +1,102 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sigec-api
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: sigec-api
+      env: develop
+      tier: backend
+      module: api
+  template:
+    metadata:
+      labels:
+        app: sigec-api
+        env: develop
+        tier: backend
+        module: api
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+    spec:
+      imagePullSecrets:
+        - name: registry-cred
+      containers:
+      - name: sigec-api
+        image: #HIDDEN#
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 20
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 20
+        env:
+        - name: JAVA_OPTS
+          value: -Xms200m -Xmx1000m
+        - name: MB_USER
+          valueFrom:
+            secretKeyRef:
+              name: sigec-secrets
+              key: mb-user
+        - name: MB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sigec-secrets
+              key: mb-passwd
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: sigec-secrets
+              key: db-user
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sigec-secrets
+              key: db-passwd
+        - name: DB_USER_ORACLE
+          valueFrom:
+            secretKeyRef:
+              name: sigec-secrets
+              key: db-user-oracle
+        - name: DB_PASSWORD_ORACLE
+          valueFrom:
+            secretKeyRef:
+              name: sigec-secrets
+              key: db-passwd-oracle
+        - name: DB_HOST
+          value: pgsql-svc.dev-sigea-storage
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        volumeMounts:
+        - mountPath: /opt/api/config
+          name: config-vol
+        - mountPath: /opt/sigea
+          name: images-vol
+      volumes:
+      - name: config-vol
+        configMap:
+          name: sigec-cm
+      - name: images-vol
+        persistentVolumeClaim:
+          claimName: pvc-sigec

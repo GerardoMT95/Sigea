@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final utlizzo versione della libreria JasperReports6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ricevuta" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" isTitleNewPage="true" uuid="7273e322-2792-498c-89a6-83037761d9e9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="net.sf.jasperreports.image.dpi" value="96"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="mediaList" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="evento" class="it.indra.SigeaCommons.model.EventoModel"/>
+	<parameter name="luoghiList" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="periodiList" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="telefono" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="sito" class="java.lang.String"/>
+	<parameter name="mediaAltriList" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="pubblicazioniList" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="mediaLink" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="serviziAccessibili" class="java.lang.String"/>
+	<parameter name="animaliAmmessi" class="java.lang.String"/>
+	<parameter name="serviziFamiglie" class="java.lang.String"/>
+	<parameter name="personeEsigenzeSpecifiche" class="java.lang.String"/>
+	<parameter name="cfTitolare" class="java.lang.String"/>
+	<parameter name="cfPiva" class="java.lang.String"/>
+	<parameter name="ragioneSociale" class="java.lang.String"/>
+	<parameter name="primaValidazione" class="java.lang.String"/>
+	<parameter name="primaValutazione" class="java.lang.String"/>
+	<parameter name="ultimaPubblicazione" class="java.lang.String"/>
+	<parameter name="dataCreazione" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="132" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="380" y="25" width="176" height="59" uuid="1012d2c9-8c43-48f5-9fda-e21a4da226ac"/>
+				<imageExpression><![CDATA["report/loghi.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="0" y="25" width="390" height="30" uuid="72f9a649-0b08-4b92-83d8-3cf7c67946c8"/>
+				<textElement>
+					<font fontName="SansSerif" size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{evento}.getDatiGenerali().getTitoloMulti().get("IT")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="77" width="351" height="17" uuid="2ced8182-c621-4a8c-aaea-c9adbe60ef6d"/>
+				<textElement>
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Data richiesta di valutazione: " + $P{primaValutazione}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="95" width="351" height="14" uuid="8b4c342a-b9e7-4036-b41f-559052d0f0b9"/>
+				<textElement>
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Data validazione: " +$P{primaValidazione}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="112" width="351" height="20" uuid="d8927e4d-3a6e-4936-97dc-7222e670ca0c"/>
+				<textElement>
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pubblicato il: " + $P{ultimaPubblicazione}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="-20" y="0" width="595" height="10" backcolor="#0075BF" uuid="851745b2-e30f-466a-91bb-726177ee0a28"/>
+				<graphicElement>
+					<pen lineColor="#0075BF"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="59" width="351" height="20" uuid="840d0301-d83f-4d62-b0a2-8122c59b206b">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Stato: " + $P{evento}.getDescrizioneStato()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="215" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="276" height="20" uuid="51afa4cf-2c16-460a-9dee-56ab8502865b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Creato da:</b> " + $P{evento}.getNomeOwner() + " " + $P{evento}.getCognomeOwner()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="10" width="276" height="20" uuid="0262bfae-b56e-4bb8-b3ef-a9037e3ae29f"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Codice fiscale:</b> " +($P{cfTitolare}!=null && !"".equals($P{cfTitolare})?$P{cfTitolare}:"N.D.")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="31" width="276" height="20" uuid="d0d53d16-5a88-4346-a6e5-9a167da21d1d"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Email:</b> " + $P{evento}.getEmailOwner()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="31" width="276" height="20" uuid="779c64d4-1c41-4bc4-a3c0-cbf7e1fff91c"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Impresa/locazione/ente:</b> " +( $P{evento}.getAttivita()!=null?$P{evento}.getAttivita().getDenominazione():($P{evento}.getRichiestaAttivita()!=null? $P{evento}.getRichiestaAttivita().getDenominazione():""))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="53" width="555" height="20" uuid="0106737b-23dc-4433-9635-165072b5ab1c"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Ragione sociale:</b> " +($P{ragioneSociale}!=null && !"".equals($P{ragioneSociale})?$P{ragioneSociale}:"N.D.")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="31" width="555" height="1" forecolor="#0075BE" uuid="5e2172f9-c4ad-4f84-85aa-0ae81eee0dcd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="55" width="555" height="1" forecolor="#0075BE" uuid="ecad6fbd-a59a-424e-8acf-e4dc17d119bc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="102" width="222" height="20" forecolor="#0075BE" uuid="60832daa-2347-47b2-b918-54ec278c2c29"/>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INFORMAZIONI BANDO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="129" width="555" height="20" uuid="ec48ebf9-36dd-44d8-a2be-cd26870729da">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0" lineColor="#0075BE"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cfPiva}!=null && !$P{cfPiva}.equals("")?"<b>CF/P.Iva:</b> " +$P{cfPiva}:"<b>CF/P.Iva:</b> N.D."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="149" width="555" height="20" uuid="6df91b8e-12d0-48f2-881f-e20231dcba4b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0" lineColor="#0075BE"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Titolo bando: </b>" +$P{evento}.getBando().getTitoloBando()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="169" width="555" height="20" isRemoveLineWhenBlank="true" uuid="fb56bf9a-129e-46d1-a9d3-5c76e197d904">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0" lineColor="#0075BE"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{evento}.getProgetto()!=null &&$P{evento}.getProgetto().getTitoloProgetto()!=null ? "<b>Titolo progetto: </b> "  +$P{evento}.getProgetto().getTitoloProgetto():"<b>Titolo progetto: </b>N.D. "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="76" width="555" height="1" forecolor="#0075BE" uuid="5c9cd7cb-67f6-455f-ab24-dcde1829d019">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="189" width="555" height="20" isRemoveLineWhenBlank="true" uuid="f5b6e0c4-44f4-416f-9b05-4a025271dd6f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0" lineColor="#0075BE"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{evento}.getProgetto()!=null && $P{evento}.getProgetto().getNomeOrganizzazione() !=null? "<b>Nome organizzazione:</b> "  +$P{evento}.getProgetto().getNomeOrganizzazione() :"<b>Nome organizzazione: </b> N.D."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="145">
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="105" width="555" height="20" isRemoveLineWhenBlank="true" uuid="ae0dbb4b-b65e-4744-a04a-c9c0a455a99e"/>
+				<box>
+					<pen lineColor="#0075BE"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Descrizione: </b>" + $P{evento}.getDatiGenerali().getDescrizioneMulti().get("IT")]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="85" width="555" height="20" isRemoveLineWhenBlank="true" uuid="6d6338d4-bb8c-48e5-ac63-19f049c7b348"/>
+				<box>
+					<pen lineColor="#0075BE"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Abstract: </b>" + $P{evento}.getDatiGenerali().getAbstractDescrMulti().get("IT")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="16" width="222" height="20" forecolor="#0075BE" uuid="3533e1d0-810d-490f-80f5-1679f8318635">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATI GENERALI]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="41" width="276" height="20" uuid="24d3317a-d389-4f81-8df2-fcdd29081aa1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Tipologia:</b> " + $P{evento}.getTipo()]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="276" y="41" width="276" height="20" uuid="f0daf730-91c0-41f4-96f9-5af75e6a2021"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Caratteristiche (Tipologia MIBACT):</b> " +$P{evento}.getTipologiaMIBACT()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="67" width="555" height="1" isRemoveLineWhenBlank="true" forecolor="#0075BE" uuid="32485a0b-c5c4-42eb-b371-c9e1cbf1d5c4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="67" width="276" height="20" uuid="08942eef-7a77-468c-8a10-287e0c7bd054"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Titolo dell'evento:</b> " + $P{evento}.getDatiGenerali().getTitoloMulti().get("IT")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="67" width="276" height="20" uuid="6ec11724-081e-403d-b84d-7e1650a77002"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Impresa/locazione/ente:</b> " +( $P{evento}.getAttivita()!=null?$P{evento}.getAttivita().getDenominazione():($P{evento}.getRichiestaAttivita()!=null? $P{evento}.getRichiestaAttivita().getDenominazione():""))]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="87" width="555" height="1" isRemoveLineWhenBlank="true" forecolor="#0075BE" uuid="f97adf61-ff51-4cd2-8a74-2692b523f2b1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+		<band height="76">
+			<staticText>
+				<reportElement x="0" y="6" width="222" height="20" forecolor="#0075BE" uuid="1880c8ee-3c04-4db6-81e8-ab21818a63f3">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOCATION]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="30" width="200" height="29" uuid="4c992600-79ba-4557-8e69-c33bcf6b61b5"/>
+				<subreportParameter name="mediaList">
+					<subreportParameterExpression><![CDATA[$P{mediaList}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="evento">
+					<subreportParameterExpression><![CDATA[$P{evento}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="luoghiList">
+					<subreportParameterExpression><![CDATA[$P{luoghiList}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{luoghiList}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["report/subreport_luoghi.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="65">
+			<staticText>
+				<reportElement x="0" y="6" width="222" height="20" forecolor="#0075BE" uuid="924db0b5-cd36-4e32-876e-caa9caedbc24">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PERIODO]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="36" width="200" height="19" uuid="d1152644-3380-4d48-8c39-a6de3d536168"/>
+				<dataSourceExpression><![CDATA[$P{periodiList}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["report/subreport_periodo.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="86">
+			<staticText>
+				<reportElement x="0" y="6" width="222" height="20" forecolor="#0075BE" uuid="15482c81-1e73-476d-abb7-4984c7d21f35">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTATTI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="31" width="276" height="20" uuid="b9c3630f-10ee-4b16-87dd-9733246b5002"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Telefono:</b> " + ($P{telefono}!=null && !"".equals($P{telefono})? $P{telefono}:"N.D.")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="31" width="276" height="20" uuid="3a4853cc-a5da-47e4-be5b-6baddfc14ec5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Email:</b> " + ($P{email}!=null && !"".equals($P{email})?$P{email}:"N.D.")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="52" width="555" height="20" uuid="540b3882-4e78-4ab1-a80e-eb63e63481c7"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sito} !=null && !$P{sito}.equals("")? "<b>Sito web/social:</b> " + $P{sito} :"<b>Sito web/social:</b> N.D."]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="51" width="555" height="1" forecolor="#0075BE" uuid="9d8837cd-f75b-4004-8b54-2d8a7d43ac95">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="72" width="555" height="1" forecolor="#0075BE" uuid="25d268f6-b682-4a8b-ad24-65051b328cd6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+		<band height="62">
+			<staticText>
+				<reportElement x="0" y="11" width="222" height="20" forecolor="#0075BE" uuid="eb014a47-1f0d-436b-9365-bd4f45130972">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TICKET ]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="42" width="276" height="20" uuid="acb828c0-485a-4bf3-a445-17f87ca64eed">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Ticket:</b> " + $P{evento}.getTicket().getTipoTicket()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="61" width="555" height="1" isRemoveLineWhenBlank="true" forecolor="#0075BE" uuid="0ac89f30-e3ff-40c6-9ad1-b5846a570f9d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="280" y="42" width="276" height="20" isRemoveLineWhenBlank="true" uuid="cccf942a-8884-4f3a-96bb-79929e447c74">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Link di prenotazione:</b> " + ($P{evento}.getTicket().getLinkPrenotazioni()!=null?$P{evento}.getTicket().getLinkPrenotazioni():"N.D.")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="103">
+			<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+			<line>
+				<reportElement positionType="Float" x="0" y="20" width="555" height="1" isRemoveLineWhenBlank="true" forecolor="#0075BE" uuid="c79035e6-213d-44f8-94b0-ebfd256d1a6f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="21" width="555" height="20" isRemoveLineWhenBlank="true" uuid="a28eaf45-45a8-4e1b-b7cf-ad1d5d1dbf5f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineColor="#0075BE"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Specifica convenzioni attive per ingresso gratuito:</b> " +( $P{evento}.getTicket().getConvenzioniAttiveG()!=null? $P{evento}.getTicket().getConvenzioniAttiveG():"N.D.")]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="41" width="276" height="20" isRemoveLineWhenBlank="true" uuid="e33da89b-57b2-48e4-b101-17ab8ad92e00">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Ingresso ridotto per:</b> " +(($P{evento}.getTicket().getFlagRidottoAccompagnatori()?"accompagnatori disabili":"") + 
+(($P{evento}.getTicket().getFlagRidottoAnziani()? ($P{evento}.getTicket().getFlagRidottoAccompagnatori()?",":" " )+ " anziani":"")) + 
+($P{evento}.getTicket().getFlagRidottoBambini()?($P{evento}.getTicket().getFlagRidottoAnziani() || $P{evento}.getTicket().getFlagRidottoAccompagnatori()?",":" " )+ " bambini":"") + 
+($P{evento}.getTicket().getFlagRidottoConvenzioni() ?($P{evento}.getTicket().getFlagRidottoBambini() ||$P{evento}.getTicket().getFlagRidottoAnziani() || $P{evento}.getTicket().getFlagRidottoAccompagnatori()?",":" " ) + " convenzioni ridotte attive":"") + 
+($P{evento}.getTicket().getFlagRidottoDisabili()?($P{evento}.getTicket().getFlagRidottoConvenzioni() ||$P{evento}.getTicket().getFlagRidottoBambini() ||$P{evento}.getTicket().getFlagRidottoAnziani() || $P{evento}.getTicket().getFlagRidottoAccompagnatori()?",":" ") + " disabili ":""))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="280" y="41" width="276" height="20" isRemoveLineWhenBlank="true" uuid="1b4eeca7-44b1-4f1f-95f9-aed4b4b14656">
+					<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Ticket ridotto:</b> " + ($P{evento}.getTicket().getTicketRidotto()!=null?$P{evento}.getTicket().getTicketRidotto():"N.D.")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="61" width="555" height="1" isRemoveLineWhenBlank="true" forecolor="#0075BE" uuid="d46bc47f-2c09-4820-b618-9f669ae395c3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="62" width="555" height="20" isRemoveLineWhenBlank="true" uuid="cf3a85b7-823b-4980-8bb0-3ef6b7a7b5ef">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineColor="#0075BE"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Specifica convenzioni attive per ingresso ridotto:</b> " + ($P{evento}.getTicket().getConvenzioniAttiveR()!=null?$P{evento}.getTicket().getConvenzioniAttiveR():"N.D.")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="102" width="555" height="1" isRemoveLineWhenBlank="true" forecolor="#0075BE" uuid="5c819080-57d6-49dd-84cc-0e0636758d72">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="1" y="82" width="276" height="20" isRemoveLineWhenBlank="true" uuid="5da80f4d-ab5f-4923-a9bf-9a578394aabf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Ingresso ridotto per gruppi:</b> " + $P{evento}.getTicket().getTicketGruppiRidotto()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="281" y="82" width="276" height="20" isRemoveLineWhenBlank="true" uuid="2a5e5592-9d47-41a7-aefd-27fc2ca0b19b">
+					<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>per gruppi di almeno </b> " + $P{evento}.getTicket().getTicketGruppiNumero() + " persone"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="280" y="0" width="276" height="20" isRemoveLineWhenBlank="true" uuid="915fa10f-8df4-4b20-90f8-0e0125d3111f">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Ingresso gratuito per:</b> " + (($P{evento}.getTicket().getFlagGratisAccompagnatori()?"accompagnatori disabili":"") + 
+(($P{evento}.getTicket().getFlagGratisAnziani()? ($P{evento}.getTicket().getFlagGratisAccompagnatori()?",":" " )+ " anziani":"")) + 
+($P{evento}.getTicket().getFlagGratisBambini()?($P{evento}.getTicket().getFlagGratisAnziani() || $P{evento}.getTicket().getFlagGratisAccompagnatori()?",":" " )+ " bambini":"") + 
+($P{evento}.getTicket().getFlagGratisConvenzioni() ?($P{evento}.getTicket().getFlagRidottoBambini() ||$P{evento}.getTicket().getFlagGratisAnziani() || $P{evento}.getTicket().getFlagGratisAccompagnatori()?",":" " ) + " convenzioni ridotte attive":"") + 
+($P{evento}.getTicket().getFlagGratisDisabili()?($P{evento}.getTicket().getFlagGratisConvenzioni() ||$P{evento}.getTicket().getFlagGratisBambini() ||$P{evento}.getTicket().getFlagGratisAnziani() || $P{evento}.getTicket().getFlagGratisAccompagnatori()?",":" ") + " disabili ":""))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="1" width="276" height="20" isRemoveLineWhenBlank="true" uuid="dc2470cb-4ca4-4d58-a034-fe7541514652">
+					<printWhenExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{evento}.getTicket().getTipoTicket().equals("pagamento")?"<b>Ticket intero:</b> " +$P{evento}.getTicket().getTicketIntero() + "€":"N.D."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="36">
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="0" width="555" height="20" isRemoveLineWhenBlank="true" uuid="ffc0a17c-0c93-49cc-80f9-63e51b4164ff">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineColor="#0075BE"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Note:</b> " + ($P{evento}.getTicket().getNotaMulti().get("IT")!=null && !"".equals($P{evento}.getTicket().getNotaMulti().get("IT"))?$P{evento}.getTicket().getNotaMulti().get("IT"):"N.D.")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="128">
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="31" width="555" height="20" isRemoveLineWhenBlank="true" uuid="b8e56a46-745f-4b55-a579-24594af4b2c4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box bottomPadding="1">
+					<pen lineWidth="1.0" lineColor="#0075BE"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#0075BE"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0075BE"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[!$P{personeEsigenzeSpecifiche}.equals("")?"<b>Persone con esigenze specifiche:</b> " + $P{personeEsigenzeSpecifiche}:"<b>Persone con esigenze specifiche:</b> N.D."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="6" width="222" height="20" forecolor="#0075BE" uuid="e4025d67-fa10-4f36-b00e-2c2f3bd6d90f">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACCESSIBILITÀ]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="51" width="555" height="20" isRemoveLineWhenBlank="true" uuid="756d3a23-94dc-4733-86b7-34cdd7928418">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box bottomPadding="1">
+					<pen lineWidth="1.0" lineColor="#0075BE"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#0075BE"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0075BE"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{serviziAccessibili}.length()>0?"<b>Servizi accessibili:</b> " +$P{serviziAccessibili}:"<b>Servizi accessibili:</b> N.D."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="71" width="555" height="20" isRemoveLineWhenBlank="true" uuid="475e6eb0-7340-4ef1-ab87-bdb399c0e94e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box bottomPadding="1">
+					<pen lineWidth="1.0" lineColor="#0075BE"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#0075BE"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0075BE"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{serviziFamiglie}.length()>0?"<b>Servizi per famiglie:</b> " + $P{serviziFamiglie}:"<b>Servizi per famiglie:</b> N.D."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="91" width="555" height="20" isRemoveLineWhenBlank="true" uuid="5f190843-713b-4eb9-9756-2bbde3c27e83">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box bottomPadding="1">
+					<pen lineWidth="1.0" lineColor="#0075BE"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#0075BE"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0075BE"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{animaliAmmessi}.length()>0?"<b>Animali ammessi:</b> " + $P{animaliAmmessi}:"<b>Animali ammessi:</b> N.D."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="95">
+			<subreport>
+				<reportElement x="0" y="37" width="200" height="40" uuid="d8737bc8-8702-4ae1-bf14-751a06b7c322"/>
+				<dataSourceExpression><![CDATA[$P{mediaList}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["report/subreport_media.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="0" y="6" width="222" height="20" forecolor="#0075BE" uuid="ad8cc791-b889-4224-b4e9-21b256091e0e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MEDIA - IMMAGINI]]></text>
+			</staticText>
+		</band>
+		<band height="94">
+			<printWhenExpression><![CDATA[$P{mediaAltriList}.getRecordCount()>0]]></printWhenExpression>
+			<staticText>
+				<reportElement x="0" y="6" width="222" height="20" forecolor="#0075BE" uuid="72a0983d-046d-4e42-9681-fefe300db403">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MEDIA - ALTRI ALLEGATI]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="1" y="34" width="200" height="39" uuid="5ea62206-81eb-46cc-9de9-8947c8aea45b"/>
+				<dataSourceExpression><![CDATA[$P{mediaAltriList}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["report/subreport_altri_media.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="72">
+			<printWhenExpression><![CDATA[$P{mediaLink}.getRecordCount()>0]]></printWhenExpression>
+			<staticText>
+				<reportElement x="0" y="6" width="222" height="20" forecolor="#0075BE" uuid="796829d0-54e1-41bf-89da-3caa3b3e5d11"/>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MEDIA - LINK]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="24" width="250" height="29" uuid="3f8ca3c5-1ed0-4a94-90a7-58e7c9bcbb27"/>
+				<dataSourceExpression><![CDATA[$P{mediaLink}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["report/subreport_link_media.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="65">
+			<printWhenExpression><![CDATA[$P{pubblicazioniList}.getRecordCount()>0]]></printWhenExpression>
+			<staticText>
+				<reportElement x="0" y="6" width="222" height="20" forecolor="#0075BE" uuid="e6aaed79-1f18-4d5b-a342-77260c12fa14"/>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PUBBLICAZIONI]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="1" y="36" width="200" height="29" uuid="0b26ec1a-2bab-4d87-9664-7aa5fc706672"/>
+				<dataSourceExpression><![CDATA[$P{pubblicazioniList}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["report/subreport_pubblicazioni.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="6" width="50" height="20" uuid="0b19899c-b31f-48fd-86ab-f90d597aec9d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="500" y="6" width="50" height="20" uuid="1861930b-942b-4988-85cf-16a83992bc2b"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA["/" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="6" width="310" height="20" uuid="b9c450db-b1f2-45f2-9467-fb53a3e512e5"/>
+				<textFieldExpression><![CDATA[$P{dataCreazione}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

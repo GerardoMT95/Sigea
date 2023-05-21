@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bandi-api-deployment
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: bandi-api
+      env: dev
+      tier: backend
+      module: api
+  template:
+    metadata:
+      labels:
+        app: bandi-api
+        env: dev
+        tier: backend
+        module: api
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - name: bandi-api
+        image: registry.ect.regione.puglia.it/dms-dev/bandi-api:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 20
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 20     
+        env:
+        - name: JAVA_OPTS
+          value: -Xms200m -Xmx1000m
+        envFrom:
+        - secretRef:
+            name: bandi-api-secrets
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        volumeMounts:
+        - mountPath: /opt/api/config
+          name: config-vol
+      volumes:
+      - name: config-vol
+        configMap:
+          name: bandi-api-cm

@@ -1,0 +1,183 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+    name: sigec-cm
+data:
+    application.yaml: |
+        server:
+           port: 8080
+           servlet:
+              contextPath: /
+        spring:
+           servlet:
+              multipart:
+                max-file-size: 10MB
+                max-request-size: 10MB
+           datasource:
+              jdbcurl: jdbc:postgresql://${DB_HOST}:5432/admin?currentSchema=sigec
+              username: ${DB_USER}
+              password: ${DB_PASSWORD}
+              hikari:
+                 leakDetectionThreshold: 5000
+                 max-lifetime: 600000
+                 maximum-pool-size: 50
+           oracle-datasource:
+              username: ${DB_USER_ORACLE}
+              password: ${DB_PASSWORD_ORACLE}
+              jdbcurl: jdbc:oracle:thin:@//#HIDDEN#:1521/DBTURIT
+              driver-class-name: oracle.jdbc.OracleDriver    
+           jpa:
+              generate-ddl: false
+              properties:
+                 hibernate:
+                    dialect: it.indra.SigecAPI.extjpa.CustomPostgreSqlDialect
+                    jdbc:
+                       lob:
+                          non_contextual_creation: true
+              devtools:
+                 remote:
+                    secret: mysecret
+           oracle-jpa:
+              hibernate:
+                 dialect: org.hibernate.dialect.Oracle12cDialect
+                 use-new-id-generator-mappings:  false
+                 ddl-auto: none
+                 dataSourceClassName: oracle.jdbc.pool.OracleDataSource
+                 naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+                 naming_physical_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+           activemq:
+              broker-url: tcp://#HIDDEN#:61616
+              user: ${MB_USER}
+              password: ${MB_PASSWORD}
+              non-blocking-redelivery: true
+              packages:
+                trust-all: true
+              close-timeout: 10
+              pool:
+                  block-if-full: true
+                  block-if-full-timeout: -1
+                  enabled: false
+                  idle-timeout: 30000
+                  max-connections: 1
+                  maximum-active-session-per-connection: 500
+                  time-between-expiration-check: -1
+                  use-anonymous-producers: true
+        logging:
+           level:
+              org:
+                 springframework:
+                    web: INFO
+                 hibernate:
+                    SQL: info
+                    type: info
+        pugliaevents:
+                   ownerList: 59592
+        filesystem:
+           repository:
+              root: /opt/sigea
+              image: immagini
+              document: documenti
+              publication: pubblicazioni
+           tmpDirectory: tmp/
+        DIRECTURL:
+           SERVICEDMS:
+              BASEPATH: #HIDDEN#
+           UTENTISERVICE:
+              BASEPATH: #HIDDEN#
+           MAIL:
+              BASEPATH: #HIDDEN#
+        mail:
+          pugliapromozione: #HIDDEN#
+        messages:
+          MODIFICA: MODIFICA
+          INSERIMENTO: INSERIMENTO
+          Redattore_di: Redattore di
+          Creazione_Evento: Creazione Evento
+          Tipologia: Tipologia
+          Dati_Generali: Dati Generali
+          Ticket: Ticket
+          Location: Location
+          Immagini: Immagini
+          Documenti: Documenti
+          Contatti: Contatti
+          Relazioni: Relazioni
+          Periodi: Periodi
+          Stato: Stato
+          Bandi: Bandi
+          Accessibilita: Accessibilita
+          Attribuzioni: Attribuzioni
+          Caratteristiche: Caratteristiche
+        # Esportazioni metriche via actuator ed aggiunta ep per prometheus.
+        # Configurazione a carico poi di CA per abilitare o disabilitare le funzionalit├á
+        management:
+           endpoints:
+              web:
+                 exposure:
+                   include: "*"
+           endpoint:
+              metrics:
+                 enabled: false
+              prometheus:
+                 enabled: false
+              export:
+                 propetheus:
+                   enabled: false
+        # proprieta esposte nell' /actuator/info
+        info:
+          app:
+            name: Api Sigec
+            description:
+          # build properties from maven
+          build:
+            groupId: '@project.groupId@'
+            artifact: '@project.artifactId@'
+            name: '@project.name@'
+            version: '@project.version@'
+        #configurazione servizio email
+        jms:
+          token:
+            enabled: true
+            url: #HIDDEN#
+            clientId: #HIDDEN#
+            clientSecret: #HIDDEN#
+          id: 1
+          templateName : email_verify.vm
+          tenant:
+            id: 000000
+          queue:
+            channel: mail-queue
+            evento: evento-sigea
+            attivita: attivita-sigea
+            newVip:
+              evento: newVip-evento-sigea
+              attivita: newVip-attivita-sigea
+          newVipEnabled: true
+          urlservice : #HIDDEN#
+          polling : 60
+          timeout : 10
+          emailConduzione: vlosito@minsait.com
+          #indra-ca-sirtur@indracompany.com
+          params: '{companyID: "#HIDDEN#", domainFE: "#HIDDEN#", companyName: "#HIDDEN#", domainLogo: "#HIDDEN#", url: "#HIDDEN#"}'
+          mail:
+              confId: 1
+              from: #HIDDEN#
+              configurazioneEmail: '[{"id":"Segnalazione","oggetto":"Segnalazione ricevuta","idTemplate":"109"},{"id":"InModifica","oggetto":"Evento spostato in modifica","idTemplate":"110"},{"id":"Rivalidato","oggetto":"Evento rivalidato","idTemplate":"154"},{"id":"Respinto","oggetto":"Evento respinto","idTemplate":"152"},{"id":"Revocato","oggetto":"Evento revocato","idTemplate":"151"},{"id":"Annullato","oggetto":"Evento annullato","idTemplate":"153"},{"id":"Pubblicato","oggetto":"Evento pubblicato","idTemplate":"107"},{"id":"ErrorePubblicazione","oggetto":"Errore","idTemplate":"201"},{"id":"ErroreSpubblicazione","oggetto":"Errore","idTemplate":"202"},{"id":"Ripubblicazione","oggetto":"Ripubblicazione evento","idTemplate":"108"}]'
+              engine:
+                name: mustache
+        constants:
+          migration:
+            owner: 51878
+            riconciliare: true
+            attivita:
+              id: 62291
+              denominazione: #HIDDEN#
+            basePath:
+              attachedFile: http://#HIDDEN#/pe_newlib              
+              territorialService: https://#HIDDEN#/t/puglia.it/adminarea-api/v1/
+            limitIteration:
+              events: 30
+              related: 30
+              events_del: 2
+kind: ConfigMap
+metadata:
+  name: sigec-cm

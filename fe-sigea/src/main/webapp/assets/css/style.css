@@ -1,0 +1,836 @@
+@font-face {
+  font-family: 'dms-webkit-icons';
+  src:
+    url('fonts/dms-webkit-icons.ttf') format('truetype'),
+    url('fonts/dms-webkit-icons.woff') format('woff'),
+    url('fonts/dms-webkit-icons.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Titillium */
+@font-face {
+    font-family: 'titilliumwebLight';
+    src:
+        url('fonts/titilliumweb/titilliumweb-light.ttf') format('truetype'),
+        url('fonts/titilliumweb/titilliumweb-light.woff') format('woff'),
+        url('fonts/titilliumweb/titilliumweb-light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'titilliumwebRegular';
+    src:
+        url('fonts/titilliumweb/titilliumweb-regular.ttf') format('truetype'),
+        url('fonts/titilliumweb/titilliumweb-regular.woff') format('woff'),
+        url('fonts/titilliumweb/titilliumweb-regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'titilliumwebSemibold';
+    src:
+        url('fonts/titilliumweb/titilliumweb-semibold.ttf') format('truetype'),
+        url('fonts/titilliumweb/titilliumweb-semibold.woff') format('woff'),
+        url('fonts/titilliumweb/titilliumweb-semibold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'titilliumwebBold';
+    src:
+        url('fonts/titilliumweb/titilliumweb-bold.ttf') format('truetype'),
+        url('fonts/titilliumweb/titilliumweb-bold.woff') format('woff'),
+        url('fonts/titilliumweb/titilliumweb-bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'titilliumwebBlack';
+    src:
+        url('fonts/titilliumweb/titilliumweb-black.ttf') format('truetype'),
+        url('fonts/titilliumweb/titilliumweb-black.woff') format('woff'),
+        url('fonts/titilliumweb/titilliumweb-black.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+i[class^="dms-wk-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'dms-webkit-icons';
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.dms-wk-icon-modifica-effettuata:before{content: "\e9c8";}
+.dms-wk-icon-teatro:before{content: "\e9c0";} 
+.dms-wk-icon-religione:before{content: "\e9c1";} 
+.dms-wk-icon-profilazione:before{content: "\e9c2";} 
+.dms-wk-icon-matrimonio:before{content: "\e9c3";} 
+.dms-wk-icon-registro-richieste:before{content: "\e9bd";} 
+.dms-wk-icon-noleggio-bici:before{content: "\e9be";}
+.dms-wk-icon-ristorante:before{ content:"\e9bf";}
+.dms-wk-icon-nuova-apertura:before{ content: "\e9b9"}
+.dms-wk-icon-esonerato:before{ content: "\e9ba"}
+.dms-wk-icon-note:before{ content: "\e9bb"}
+.dms-wk-icon-upload:before{ content: "\e9bc"}
+.dms-wk-icon-cps:before{ content: "\e9b8"}
+.dms-wk-icon-arrivo:before{ content: "\e9b5"}
+.dms-wk-icon-partenza:before{ content: "\e9b6"}
+.dms-wk-icon-bacheca:before{ content: "\e9b7"}
+.dms-wk-icon-close:before { content: "\e9b4"}
+.dms-wk-icon-camere-ocupate:before { content: "\e9b3"}
+.dms-wk-icon-cis-sospeso:before { content: "\e9b2"}
+.dms-wk-icon-email-2:before { content: "\e9ac"}
+.dms-wk-icon-accessibilita:before { content:before "\e9ad"}
+.dms-wk-icon-servizi-accessibili:before { content: "\e9ae"}
+.dms-wk-icon-famiglia:before { content: "\e9af"}
+.dms-wk-icon-percorsi-accessibili:before { content: "\e9b0"}
+.dms-wk-icon-filter:before { content: "\e9b1"}
+.dms-wk-icon-bandi:before { content: "\e9aa"}
+.dms-wk-icon-puglia-partecipa:before { content: "\e9ab"}
+.dms-wk-icon-show-password:before { content: "\e9a9"}
+.dms-wk-icon-settings:before { content: "\e988"}
+.dms-wk-icon-expand:before { content: "\e9a4"}
+.dms-wk-icon-photo:before { content: "\e9a5"}
+.dms-wk-icon-audio:before { content: "\e9a6"}
+.dms-wk-icon-video:before { content: "\e9a7"}
+.dms-wk-icon-ricevuta-spot:before { content: "\e9a8"}
+.dms-wk-icon-users:before { content: "\e9a2"}
+.dms-wk-icon-monitora-spot:before { content: "\e9a3"}
+.dms-wk-icon-pause:before { content: "\e99e"}
+.dms-wk-icon-play:before { content: "\e99f"}
+.dms-wk-icon-arrow-slider-left:before { content: "\e9a0"}
+.dms-wk-icon-arrow-slider-right:before { content: "\e9a1"}
+.dms-wk-icon-lk:before { content: "\e98b"}
+.dms-wk-icon-yt-light:before { content: "\e98c"}
+.dms-wk-icon-tw-light:before { content: "\e98d"}
+.dms-wk-icon-fb-light:before { content: "\e98e"}
+.dms-wk-icon-lk-light:before { content: "\e98f"}
+.dms-wk-icon-ig-light:before { content: "\e990"}
+.dms-wk-icon-not-favorite:before { content: "\e991"}
+.dms-wk-icon-customer-segment:before { content: "\e992"}
+.dms-wk-icon-download:before { content: "\e993"}
+.dms-wk-icon-move:before { content: "\e994"}
+.dms-wk-icon-notification:before { content: "\e995"}
+.dms-wk-icon-compatibility:before { content: "\e996"}
+.dms-wk-icon-pin:before { content: "\e997"}
+.dms-wk-icon-show-details:before { content: "\e998"}
+.dms-wk-icon-seller:before { content: "\e999"}
+.dms-wk-icon-buyer:before { content: "\e99a"}
+.dms-wk-icon-accept:before { content: "\e99b"}
+.dms-wk-icon-deny:before { content: "\e99c"}
+.dms-wk-icon-handshake:before { content: "\e99d"}
+.dms-wk-icon-glossario:before { content: "\e98a"}
+.dms-wk-icon-cerca-servizio:before { content: "\e987"}
+.dms-wk-icon-concorsi:before { content: "\e989"}
+.dms-wk-icon-promuovi-evento:before { content: "\e986"}
+.dms-wk-icon-configura-evento:before { content: "\e918"}
+.dms-wk-icon-suggerisci-evento:before { content: "\e920"}
+.dms-wk-icon-docx:before { content: "\e983"}
+.dms-wk-icon-remove:before { content: "\e984"}
+.dms-wk-icon-apulia-film-commission:before { content: "\e985"}
+.dms-wk-icon-arem:before { content: "\e97d"}
+.dms-wk-icon-teatro-pubb-pugliese:before { content: "\e97e"}
+.dms-wk-icon-puglia-salute:before { content: "\e97f"}
+.dms-wk-icon-contacts:before { content: "\e980"}
+.dms-wk-icon-retweet:before { content: "\e981"}
+.dms-wk-icon-phone:before { content: "\e982"}
+.dms-wk-icon-email:before { content: "\e95d"}
+.dms-wk-icon-pec:before { content: "\e963"}
+.dms-wk-icon-app:before { content: "\e964"}
+.dms-wk-icon-xls:before { content: "\e965"}
+.dms-wk-icon-adisu:before { content: "\e966"}
+.dms-wk-icon-arti:before { content: "\e967"}
+.dms-wk-icon-arif:before { content: "\e968"}
+.dms-wk-icon-aress:before { content: "\e969"}
+.dms-wk-icon-aret:before { content: "\e96a"}
+.dms-wk-icon-arpa:before { content: "\e96b"}
+.dms-wk-icon-asset:before { content: "\e96c"}
+.dms-wk-icon-ager:before { content: "\e96d"}
+.dms-wk-icon-normativa-e-doc:before { content: "\e96e"}
+.dms-wk-icon-oss-contratti:before { content: "\e96f"}
+.dms-wk-icon-programm-di-gov:before { content: "\e970"}
+.dms-wk-icon-atto-di-legge:before { content: "\e971"}
+.dms-wk-icon-registro-lobbing:before { content: "\e972"}
+.dms-wk-icon-like:before { content: "\e973"}
+.dms-wk-icon-cerca-persone:before { content: "\e974"}
+.dms-wk-icon-accesso-agli-atti:before { content: "\e975"}
+.dms-wk-icon-organigramma:before { content: "\e976"}
+.dms-wk-icon-open-data:before { content: "\e977"}
+.dms-wk-icon-time:before { content: "\e978"}
+.dms-wk-icon-website:before { content: "\e979"}
+.dms-wk-icon-share:before { content: "\e97a"}
+.dms-wk-icon-comment:before { content: "\e97b"}
+.dms-wk-icon-pdf:before { content: "\e97c"}
+.dms-wk-icon-register-request:before { content: "\e962"}
+.dms-wk-icon-news:before { content: "\e92d"}
+.dms-wk-icon-burp:before { content: "\e947"}
+.dms-wk-icon-share-fb-path1:before { content: "\e948"}
+.dms-wk-icon-share-fb-path2:before { content: "\e949"}
+.dms-wk-icon-share-tw-path1:before { content: "\e94a"}
+.dms-wk-icon-share-tw-path2:before { content: "\e94b"}
+.dms-wk-icon-share-lk-path1:before { content: "\e94c"}
+.dms-wk-icon-share-lk-path2:before { content: "\e94d"}
+.dms-wk-icon-share-lk-path3:before { content: "\e94e"}
+.dms-wk-icon-share-wapp-path1:before { content: "\e94f"}
+.dms-wk-icon-share-wapp-path2:before { content: "\e950"}
+.dms-wk-icon-share-wapp-path3:before { content: "\e951"}
+.dms-wk-icon-share-telegram-path1:before { content: "\e952"}
+.dms-wk-icon-share-telegram-path2:before { content: "\e953"}
+.dms-wk-icon-share-telegram-path3:before { content: "\e954"}
+.dms-wk-icon-share-telegram-path4:before { content: "\e955"}
+.dms-wk-icon-share-email-path1:before { content: "\e956"}
+.dms-wk-icon-share-email-path2:before { content: "\e957"}
+.dms-wk-icon-share-email-path3:before { content: "\e958"}
+.dms-wk-icon-share-email-path4:before { content: "\e959"}
+.dms-wk-icon-share-email-path5:before { content: "\e95a"}
+.dms-wk-icon-copy-link:before { content: "\e95b"}
+.dms-wk-icon-zip:before { content: "\e95c"}
+.dms-wk-icon-amm-trasparente:before { content: "\e95e"}
+.dms-wk-icon-albo-pretorio:before { content: "\e95f"}
+.dms-wk-icon-guida:before { content: "\e960"}
+.dms-wk-icon-back-to-top:before { content: "\e961"}
+.dms-wk-icon-cal:before { content: "\e90f"}
+.dms-wk-icon-locazione-turistica:before { content: "\e93c"}
+.dms-wk-icon-aggiungi-locazione:before { content: "\e93d"}
+.dms-wk-icon-struttura-ricettiva:before { content: "\e93e"}
+.dms-wk-icon-aggiungi-sr:before { content: "\e921"}
+.dms-wk-icon-spot:before { content: "\e93f"}
+.dms-wk-icon-ps:before { content: "\e940"}
+.dms-wk-icon-offerte:before { content: "\e941"}
+.dms-wk-icon-workshop:before { content: "\e942"}
+.dms-wk-icon-cambio-spot:before { content: "\e943"}
+.dms-wk-icon-monitoraggio-spot:before { content: "\e944"}
+.dms-wk-icon-monitora-cps:before { content: "\e945"}
+.dms-wk-icon-educational:before { content: "\e946"}
+.dms-wk-icon-stabilimenti:before { content: "\e930"}
+.dms-wk-icon-comuni:before { content: "\e931"}
+.dms-wk-icon-op-turistici:before { content: "\e932"}
+.dms-wk-icon-agenzie-di-viaggio:before { content: "\e933"}
+.dms-wk-icon-infopoint:before { content: "\e934"}
+.dms-wk-icon-museo:before { content: "\e935"}
+.dms-wk-icon-op-culturali:before { content: "\e936"}
+.dms-wk-icon-feedback:before { content: "\e937"}
+.dms-wk-icon-login:before { content: "\e938"}
+.dms-wk-icon-normativa:before { content: "\e939"}
+.dms-wk-icon-info:before { content: "\e93a"}
+.dms-wk-icon-search:before { content: "\e93b"}
+.dms-wk-icon-arrow-right-double:before { content: "\e92e"}
+.dms-wk-icon-arrow-left-double:before { content: "\e92f"}
+.dms-wk-icon-check:before { content: "\e92b"}
+.dms-wk-icon-user:before { content: "\e927"}
+.dms-wk-icon-logo-regione:before { content: "\e928"}
+.dms-wk-icon-logout:before { content: "\e929"}
+.dms-wk-icon-faq:before { content: "\e92a"}
+.dms-wk-icon-copy:before { content: "\e926"}
+.dms-wk-icon-hamburger:before { content: "\e924"}
+.dms-wk-icon-yt:before { content: "\e922"}
+.dms-wk-icon-tw:before { content: "\e923"}
+.dms-wk-icon-fb:before { content: "\e925"}
+.dms-wk-icon-ig:before { content: "\e914"}
+.dms-wk-icon-edit:before { content: "\e900"}
+.dms-wk-icon-add:before { content: "\e901"}
+.dms-wk-icon-zoom-in:before { content: "\e902"}
+.dms-wk-icon-zoom-out:before { content: "\e903"}
+.dms-wk-icon-delete:before { content: "\e904"}
+.dms-wk-icon-document:before { content: "\e905"}
+.dms-wk-icon-print:before { content: "\e906"}
+.dms-wk-icon-save:before { content: "\e907"}
+.dms-wk-icon-arrow-left:before { content: "\e908"}
+.dms-wk-icon-arrow-right:before { content: "\e909"}
+.dms-wk-icon-arrow-up:before { content: "\e90a"}
+.dms-wk-icon-arrow-down:before { content: "\e90b"}
+.dms-wk-icon-users1:before { content: "\e90c"}
+.dms-wk-icon-warning:before { content: "\e90d"}
+.dms-wk-icon-success:before { content: "\e90e"}
+.dms-wk-icon-error:before { content: "\e92c"}
+.dms-wk-icon-external-link:before { content: "\e910"}
+.dms-wk-icon-favorite:before { content: "\e911"}
+.dms-wk-icon-servizio:before { content: "\e912"}
+.dms-wk-icon-spid:before { content: "\e913"}
+.dms-wk-icon-agenda:before { content: "\e915"}
+.dms-wk-icon-dati-gestore-immobile:before { content: "\e916"}
+.dms-wk-icon-gestione-cis:before { content: "\e917"}
+.dms-wk-icon-matching:before { content: "\e919"}
+.dms-wk-icon-form:before { content: "\e91a"}
+.dms-wk-icon-evento:before { content: "\e91b"}
+.dms-wk-icon-manifestazione-di-interesse:before { content: "\e91c"}
+.dms-wk-icon-impresa-professione:before { content: "\e91d"}
+.dms-wk-icon-aggiungi-impresa-professione:before { content: "\e91e"}
+.dms-wk-icon-comune:before { content: "\e91f"}
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?qunpjb');
+  src:  url('fonts/icomoon.eot?qunpjb#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?qunpjb') format('truetype'),
+    url('fonts/icomoon.woff?qunpjb') format('woff'),
+    url('fonts/icomoon.svg?qunpjb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dati-gestore-immobile:before {
+  content: "\e933";
+}
+.icon-documento:before {
+  content: "\e906";
+}
+.icon-link_esterno:before {
+  content: "\e931";
+}
+.icon-spid_icon:before {
+  content: "\e932";
+}
+.icon-accetta_rifiuta:before {
+  content: "\e900";
+}
+.icon-accreditamento_fiere:before {
+  content: "\e901";
+}
+.icon-add_impresa_professione:before {
+  content: "\e902";
+}
+.icon-add_locazione_turistica:before {
+  content: "\e903";
+}
+.icon-add_strutture_ricettive .path1:before {
+  content: "\e904";
+}
+.icon-add_strutture_ricettive .path2:before {
+  content: "\e905";
+  margin-left: -1em;
+}
+.icon-aggiungi:before {
+  content: "\e907";
+}
+.icon-attenzione:before {
+  content: "\e908";
+}
+.icon-avanti:before {
+  content: "\e909";
+}
+.icon-bacheca:before {
+  content: "\e90a";
+}
+.icon-calendario:before {
+  content: "\e90b";
+}
+.icon-cambio_SPOT:before {
+  content: "\e90c";
+}
+.icon-cerca:before {
+  content: "\e90d";
+}
+.icon-configurazione_evento:before {
+  content: "\e90e";
+}
+.icon-CPS:before {
+  content: "\e90f";
+}
+.icon-creazione_agenda:before {
+  content: "\e910";
+}
+.icon-edu_co:before {
+  content: "\e911";
+}
+.icon-elimina:before {
+  content: "\e912";
+}
+.icon-ente:before {
+  content: "\e913";
+}
+.icon-errore:before {
+  content: "\e914";
+}
+.icon-gestione_CIS:before {
+  content: "\e915";
+}
+.icon-gestione_delegati:before {
+  content: "\e916";
+}
+.icon-impostazioni:before {
+  content: "\e917";
+}
+.icon-impresa_professione:before {
+  content: "\e918";
+}
+.icon-indietro:before {
+  content: "\e919";
+}
+.icon-informazioni:before {
+  content: "\e91a";
+}
+.icon-locazione_turistica:before {
+  content: "\e91b";
+}
+.icon-log_out:before {
+  content: "\e91c";
+}
+.icon-manifestazione_intresse:before {
+  content: "\e91d";
+}
+.icon-matching:before {
+  content: "\e91e";
+}
+.icon-modifica:before {
+  content: "\e91f";
+}
+.icon-monitoraggio_CPS:before {
+  content: "\e920";
+}
+.icon-monitoraggio_SPOT:before {
+  content: "\e921";
+}
+.icon-normativa:before {
+  content: "\e922";
+}
+.icon-offerte:before {
+  content: "\e923";
+}
+.icon-preferiti:before {
+  content: "\e924";
+}
+.icon-promozione_evento:before {
+  content: "\e925";
+}
+.icon-ricevuta_spot:before {
+  content: "\e926";
+}
+.icon-salva:before {
+  content: "\e927";
+}
+.icon-SPOT:before {
+  content: "\e928";
+}
+.icon-stampa_locazione_turistica:before {
+  content: "\e929";
+}
+.icon-strutture_ricettive:before {
+  content: "\e92a";
+}
+.icon-successo:before {
+  content: "\e92b";
+}
+.icon-suggerisci_evento:before {
+  content: "\e92c";
+}
+.icon-user:before {
+  content: "\e92d";
+}
+.icon-workshop:before {
+  content: "\e92e";
+}
+.icon-zoom_in:before {
+  content: "\e92f";
+}
+.icon-zoom_out:before {
+  content: "\e930";
+}
+/* nuove da template base */
+
+@charset "UTF-8";
+.m-none {
+  margin: 0 !important; }
+
+.m-r-none {
+  margin-right: 0 !important; }
+
+.m-r-xs {
+  margin-right: 0.5rem !important; }
+
+.m-r-sm {
+  margin-right: 0.8rem !important; }
+
+.m-r-md {
+  margin-right: 1.5rem !important; }
+
+.m-r-lg {
+  margin-right: 2rem !important; }
+
+.m-r-xl {
+  margin-right: 3rem !important; }
+
+.m-l-none {
+  margin-left: 0 !important; }
+
+.m-l-xs {
+  margin-left: 0.5rem !important; }
+
+.m-l-sm {
+  margin-left: 0.8rem !important; }
+
+.m-l-md {
+  margin-left: 1.5rem !important; }
+
+.m-l-lg {
+  margin-left: 2rem !important; }
+
+.m-l-xl {
+  margin-left: 3rem !important; }
+
+.m-t-none {
+  margin-top: 0 !important; }
+
+.m-t-xs {
+  margin-top: 0.5rem !important; }
+
+.m-t-sm {
+  margin-top: 0.8rem !important; }
+
+.m-t-md {
+  margin-top: 1.5rem !important; }
+
+.m-t-lg {
+  margin-top: 2rem !important; }
+
+.m-t-xl {
+  margin-top: 3rem !important; }
+
+.m-b-none {
+  margin-bottom: 0 !important; }
+
+.m-b-xs {
+  margin-bottom: 0.5rem !important; }
+
+.m-b-sm {
+  margin-bottom: 0.8rem !important; }
+
+.m-b-md {
+  margin-bottom: 1.5rem !important; }
+
+.m-b-lg {
+  margin-bottom: 2rem !important; }
+
+.m-b-xl {
+  margin-bottom: 3rem !important; }
+
+/* COLORS */
+/* TYPOGRAPHY */
+h1 {
+  margin-bottom: 3.2rem;
+  color: #003a54;
+  font-size: 2rem;
+  line-height: 28px; }
+  @media (min-width: 992px) {
+    h1 {
+      margin-bottom: 4.8rem;
+      font-size: 2.4rem;
+      line-height: 30px; } }
+
+h2 {
+  margin-bottom: 2.4rem;
+  color: #003a54;
+  font-size: 1.8rem;
+  line-height: 24px; }
+  @media (min-width: 992px) {
+    h2 {
+      font-size: 2.1rem;
+      line-height: 27px; } }
+
+h3 {
+  margin-bottom: 1.6rem;
+  color: #003a54;
+  font-size: 1.6rem;
+  line-height: 24px; }
+  @media (min-width: 992px) {
+    h3 {
+      margin-bottom: 2.4rem;
+      font-size: 1.8rem;
+      line-height: 24px; } }
+
+h4 {
+/*   margin-bottom: 1.6rem; */
+  color: #003a54;
+  font-size: 1.4rem;
+  line-height: 22px; }
+  @media (min-width: 992px) {
+    h4 {
+      font-size: 1.6rem;
+       } 
+       }
+
+h5 {
+  margin-bottom: 1.6rem;
+  color: #003a54;
+  font-size: 1.2rem;
+  line-height: 18px; }
+  @media (min-width: 992px) {
+    h5 {
+      font-size: 1.4rem; } }
+
+h6 {
+  margin-bottom: 1.6rem;
+  color: #003a54;
+  font-size: 1.2rem;
+  line-height: 18px; }
+  @media (min-width: 992px) {
+    h6 {
+      font-size: 1.4rem; } }
+
+p {
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 21px; }
+  @media (min-width: 992px) {
+    p {
+      line-height: 24px; } }
+  p.date, p.place {
+    margin-bottom: 1.6rem;
+    color: #000000;
+    font-size: 1.4rem;
+    line-height: 21px; }
+    p.date i, p.place i {
+      margin-right: 0.8rem;
+      font-size: 1.6rem;
+      vertical-align: middle;
+      line-height: 21px; }
+  p small {
+    font-size: 1.4rem; }
+
+ul, ol {
+  padding-left: 2rem; }
+  ul.list-none, ol.list-none {
+    padding-left: 0; }
+    ul.list-none li, ol.list-none li {
+      list-style: none; }
+
+.example-font--titillium {
+  padding-bottom: 1.5rem;
+  color: #000000;
+  font-size: 4rem; }
+  @media (min-width: 992px) {
+    .example-font--titillium {
+      font-size: 6rem; } }
+
+.example-font--barlow {
+  padding-bottom: 1.5rem;
+  color: #000000;
+  font-size: 4rem; }
+  @media (min-width: 992px) {
+    .example-font--barlow {
+      font-size: 6rem; } }
+
+/* Txt */
+.primary-clr--txt {
+  color: #0075bf !important; }
+
+.secondary-clr--txt {
+  color: #003a54 !important; }
+
+.white-clr--txt {
+  color: #ffffff !important; }
+
+.gray-clr--txt {
+  color: #f2f2f2 !important; }
+
+.warning-clr--txt {
+  color: #a66300 !important; }
+
+.success-clr--txt {
+  color: #008758 !important; }
+
+.error-clr--txt {
+  color: #D9364F !important; }
+
+.white-clr--txt {
+  color: #ffffff !important; }
+
+.black-clr--txt {
+  color: #000000 !important; }
+
+/* Bkg */
+.primary-clr--bkg {
+  background-color: #0075bf !important; }
+
+.secondary-clr--bkg {
+  background-color: #003a54 !important; }
+
+.white-clr--bkg {
+  background-color: #ffffff !important; }
+
+.gray-clr--bkg {
+  background-color: #f2f2f2 !important; }
+
+.warning-clr--bkg {
+  background-color: #a66300 !important; }
+
+.success-clr--bkg {
+  background-color: #008758 !important; }
+
+.error-clr--bkg {
+  background-color: #D9364F !important; }
+
+.white-clr--bkg {
+  background-color: #ffffff !important; }
+
+.black-clr--bkg {
+  background-color: #000000 !important; }
+
+.disable-click {
+  pointer-events: none; }
+
+.full-width {
+  width: 100%; }
+
+.full-height {
+  height: 100%; }
+
+.auto-height {
+  height: auto !important; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+html {
+  font-size: 10px;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1.6rem; }
+  body a {
+    color: #0075bf; }
+    body a:hover, body a:focus {
+      text-decoration: none; }
+  body.menu-is-open {
+    height: 100%;
+    position: fixed;
+    overflow: hidden; }
+
+hr {
+  margin: 4rem 0; }
+
+.category {
+  position: relative; }
+  .category:before {
+    content: '';
+    background-color: #0075bf;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: .6rem;
+    height: 4rem;
+    transform: translateY(-50%); }
+
+/* Template pagine empty states */
+
+@font-face {
+  font-family: 'dms-webkit-icons';
+  src: url("fonts/dms-webkit-icons.ttf") format("truetype"), 
+  url("fonts/dms-webkit-icons.woff") format("woff"), 
+  url("fonts/dms-webkit-icons.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+@font-face {
+  font-family: 'barlowRegular';
+  src: url("../fonts/Barlow/Barlow-Regular.ttf") format("truetype"), 
+  url("../fonts/Barlow/Barlow-Regular.woff") format("woff"), 
+  url("../fonts/Barlow/Barlow-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'barlowMedium';
+  src: url("../fonts/Barlow/Barlow-medium.ttf") format("truetype"), 
+  url("../fonts/Barlow/Barlow-medium.woff") format("woff"), 
+  url("../fonts/Barlow/Barlow-medium.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'barlowSemibold';
+  src: url("../fonts/Barlow/barlow-semibold.ttf") format("truetype"), 
+  url("../fonts/Barlow/barlow-semibold.woff") format("woff"), 
+  url("../fonts/Barlow/barlow-semibold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'barlowBold';
+  src: url("../fonts/Barlow/Barlow-Bold.ttf") format("truetype"), 
+  url("../fonts/Barlow/Barlow-Bold.woff") format("woff"), 
+  url("../fonts/Barlow/Barlow-Bold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Titillium */
+@font-face {
+  font-family: 'titilliumwebLight';
+  src: url("../fonts/Titillium_Web/TitilliumWeb-Light.ttf") format("truetype"), 
+  url("../fonts/Titillium_Web/TitilliumWeb-Light.woff") format("woff"), 
+  url("../fonts/Titillium_Web/TitilliumWeb-Light.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'titilliumwebRegular';
+  src: url("../fonts/Titillium_Web/TitilliumWeb-Regular.ttf") format("truetype"), 
+  url("../fonts/Titillium_Web/TitilliumWeb-Regular.woff") format("woff"), 
+  url("../fonts/Titillium_Web/TitilliumWeb-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'titilliumwebSemibold';
+  src: url("../fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf") format("truetype"), 
+  url("../fonts/Titillium_Web/TitilliumWeb-SemiBold.woff") format("woff"), 
+  url("../fonts/Titillium_Web/TitilliumWeb-SemiBold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'titilliumwebBold';
+  src: url("../fonts/Titillium_Web/TitilliumWeb-Bold.ttf") format("truetype"), 
+  url("../fonts/Titillium_Web/TitilliumWeb-Bold.woff") format("woff"), 
+  url("../fonts/Titillium_Web/TitilliumWeb-Bold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+
+
+
+strong,
+b {
+  font-family: 'titilliumwebSemibold', sans-serif; }

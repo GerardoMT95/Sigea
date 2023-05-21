@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final utlizzo versione della libreria JasperReports6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreport_media" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1f16005e-ed0f-430f-89bd-81b7a728c106">
+	<property name="net.sf.jasperreports.image.dpi" value="72"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="chiusuraGio" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[chiusuraGio]]></fieldDescription>
+	</field>
+	<field name="dataSecca" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[dataSecca]]></fieldDescription>
+	</field>
+	<field name="orarioChiusuraPomeriggio" class="java.lang.String">
+		<fieldDescription><![CDATA[orarioChiusuraPomeriggio]]></fieldDescription>
+	</field>
+	<field name="chiusuraDom" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[chiusuraDom]]></fieldDescription>
+	</field>
+	<field name="fgContinuato" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[fgContinuato]]></fieldDescription>
+	</field>
+	<field name="chiusuraLun" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[chiusuraLun]]></fieldDescription>
+	</field>
+	<field name="cadenzaMensile" class="java.util.Set">
+		<fieldDescription><![CDATA[cadenzaMensile]]></fieldDescription>
+	</field>
+	<field name="periodoId" class="java.lang.Long">
+		<fieldDescription><![CDATA[periodoId]]></fieldDescription>
+	</field>
+	<field name="cadenzaVen" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[cadenzaVen]]></fieldDescription>
+	</field>
+	<field name="cadenzaMar" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[cadenzaMar]]></fieldDescription>
+	</field>
+	<field name="chiusuraMer" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[chiusuraMer]]></fieldDescription>
+	</field>
+	<field name="chiusuraVen" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[chiusuraVen]]></fieldDescription>
+	</field>
+	<field name="orarioApertura" class="java.lang.String">
+		<fieldDescription><![CDATA[orarioApertura]]></fieldDescription>
+	</field>
+	<field name="chiusuraMar" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[chiusuraMar]]></fieldDescription>
+	</field>
+	<field name="chiusuraSab" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[chiusuraSab]]></fieldDescription>
+	</field>
+	<field name="cadenzaMer" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[cadenzaMer]]></fieldDescription>
+	</field>
+	<field name="cadenzaSab" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[cadenzaSab]]></fieldDescription>
+	</field>
+	<field name="cadenza" class="java.lang.String">
+		<fieldDescription><![CDATA[cadenza]]></fieldDescription>
+	</field>
+	<field name="orarioChiusuraMattina" class="java.lang.String">
+		<fieldDescription><![CDATA[orarioChiusuraMattina]]></fieldDescription>
+	</field>
+	<field name="cadenzaGio" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[cadenzaGio]]></fieldDescription>
+	</field>
+	<field name="cadenzaDom" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[cadenzaDom]]></fieldDescription>
+	</field>
+	<field name="cadenzaLun" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[cadenzaLun]]></fieldDescription>
+	</field>
+	<field name="dataDa" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataDa]]></fieldDescription>
+	</field>
+	<field name="dataA" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataA]]></fieldDescription>
+	</field>
+	<field name="orarioChiusura" class="java.lang.String">
+		<fieldDescription><![CDATA[orarioChiusura]]></fieldDescription>
+	</field>
+	<field name="orarioAperturaMattina" class="java.lang.String">
+		<fieldDescription><![CDATA[orarioAperturaMattina]]></fieldDescription>
+	</field>
+	<field name="orarioAperturaPomeriggio" class="java.lang.String">
+		<fieldDescription><![CDATA[orarioAperturaPomeriggio]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="55" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="1" width="276" height="20" uuid="228d3c60-0b30-4d97-a2a8-2fdd551e5345"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataSecca}?"<b>Data:</b>" +    new SimpleDateFormat("dd/MM/yyyy").format(($F{dataDa})) :"<b>Data:</b>" + new SimpleDateFormat("dd/MM/yyyy").format($F{dataDa}) + "-" + new SimpleDateFormat("dd/MM/yyyy").format($F{dataA})]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="280" y="1" width="276" height="20" uuid="957287fe-2d2c-46bc-8cbe-40a11a1c5bb6"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fgContinuato}?"<b>Ripetizione evento:</b> continuato" : "<b>Ripetizione evento:</b>non continuato "]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="22" width="555" height="20" uuid="e738ef67-61ee-4aee-b6ca-bfc0d00e3ab1"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fgContinuato}?"<b>Orari:</b> " 
++( $F{orarioApertura}!=null?$F{orarioApertura} +( $F{orarioChiusura}!=null?" - " + $F{orarioChiusura} :""):"N.D."):
+ "<b>Orari:</b> " +($F{orarioAperturaMattina}!=null?$F{orarioAperturaMattina} + ($F{orarioChiusuraMattina} !=null?" - "  + $F{orarioChiusuraMattina} 	+($F{orarioAperturaPomeriggio} !=null? ", " + $F{orarioAperturaPomeriggio} +($F{orarioChiusuraPomeriggio}!=null?" - " + $F{orarioChiusuraPomeriggio}:
+"" ):""):""):"N.D.")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="22" width="555" height="1" forecolor="#0075BE" uuid="32f3cf92-9cad-4a78-8673-b891ece79678">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="47" width="555" height="1" forecolor="#0075BE" uuid="761a6ed6-7e87-4a27-9531-8e375b67c4f3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final utlizzo versione della libreria JasperReports6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreport_media" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1f16005e-ed0f-430f-89bd-81b7a728c106">
+	<property name="net.sf.jasperreports.image.dpi" value="72"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="path" class="java.lang.String">
+		<fieldDescription><![CDATA[path]]></fieldDescription>
+	</field>
+	<field name="didascalia" class="java.lang.String">
+		<fieldDescription><![CDATA[didascalia]]></fieldDescription>
+	</field>
+	<field name="credits" class="java.lang.String">
+		<fieldDescription><![CDATA[credits]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[nome]]></fieldDescription>
+	</field>
+	<field name="dimensione" class="java.lang.String">
+		<fieldDescription><![CDATA[dimensione]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="0" width="555" height="20" uuid="5a94e29a-1ab1-4d45-95b5-b12387652300"/>
+				<box>
+					<pen lineStyle="Solid" lineColor="#0075BE"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#0075BE"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0075BE"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}.length()>0?"<b>Allegato:</b> " + $F{nome}:"<b>Allegato:</b> N.D." ]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="22" width="555" height="20" uuid="29c47e5b-e086-4728-b537-1f4d67db74aa"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0075BE"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{didascalia}.length()>0?"<b>Didascalia:</b> " + $F{didascalia}:"<b>Didascalia:</b> N.D." ]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

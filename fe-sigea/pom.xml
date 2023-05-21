@@ -1,0 +1,353 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>it.indra</groupId>
+	<artifactId>SigeaWeb</artifactId>
+	<name>sigeaweb</name>
+	<packaging>war</packaging>
+	<version>2.1.13</version>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<springframework.version>5.1.6.RELEASE</springframework.version>
+		<springsecurity.version>5.0.1.RELEASE</springsecurity.version>
+		<log4j.version>1.2.17</log4j.version>
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
+	</properties>
+
+	<dependencies>
+		<!-- Authentication framework -->
+		<!-- <dependency>
+				<groupId>it.spc.wso2openid</groupId>
+				<artifactId>wso2openid</artifactId>
+				<version>1.0.1</version>
+		</dependency> -->
+		<dependency>
+			<groupId>it.puglia.spc.turismocultura</groupId>
+			<artifactId>Utility</artifactId>
+			<version>4.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.puglia.spc</groupId>
+			<artifactId>auth</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<!-- Sigea Commons -->
+		<dependency>
+				<groupId>it.indra</groupId>
+				<artifactId>SigeaCommons</artifactId>
+				<version>1.0.2</version>
+		</dependency>
+		<dependency>
+				<groupId>it.puglia.spc.ect</groupId>
+				<artifactId>bandi-commons</artifactId>
+				<version>1.0.0</version>
+		</dependency>
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+			
+		<!-- ADD  -->
+			<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>4.3.9.RELEASE</version>
+		</dependency>
+			<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+			<version>4.3.9.RELEASE</version>
+		</dependency>
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.10</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-configuration2</artifactId>
+		    <version>2.6</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-text</artifactId>
+		    <version>1.8</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>commons-beanutils</groupId>
+    		<artifactId>commons-beanutils</artifactId>
+    		<version>1.9.4</version>
+		</dependency>
+
+		<!-- Unit test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.dbunit</groupId>
+			<artifactId>dbunit</artifactId>
+			<version>2.5.3</version>
+		</dependency>
+
+		
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${springsecurity.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${springsecurity.version}</version>
+		</dependency>
+
+		<!-- log formato JSON -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160810</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>1.4.01</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.htmlparser.jericho/jericho-html -->
+		<dependency>
+			<groupId>net.htmlparser.jericho</groupId>
+			<artifactId>jericho-html</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${springsecurity.version}</version>
+		</dependency>
+		<!-- STOMP -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+  <dependency>
+    <groupId>org.apache.tika</groupId>
+    <artifactId>tika-core</artifactId>
+    <version>0.7</version>
+  </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+		<!--  <pluginManagement>-->
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.4</version>
+					<configuration>
+						<warSourceDirectory>src/main/webapp</warSourceDirectory>
+						<warName>SigeaWeb</warName>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+				 <!-- Docker build -->
+		        <plugin>
+		            <groupId>io.fabric8</groupId>
+		            <artifactId>docker-maven-plugin</artifactId>
+		            <configuration>
+		            	<dockerHost>npipe:////./pipe/docker_engine</dockerHost>
+		                <images>
+		                    <image>
+		                    	<name>registry.ect.regione.puglia.it/sigea-dev/${project.name}:${project.version}</name>
+		                        <!-- <name>${project.name}:${project.version}</name> -->
+		                        <alias>${project.name}</alias>
+		                        <build>
+		                            <from>registry.ect.regione.puglia.it/tomcat:8.5.50</from>
+		                            <assembly>
+		                                <targetDir>/</targetDir>
+		                                <inline>
+	                                        <files>
+	                                            <file>
+	                                                <source>timezone</source>
+	                                                <outputDirectory>etc</outputDirectory>
+	                                                <destName>timezone</destName>
+	                                            </file>
+	                                            <file>
+	                                                <source>target/SigeaWeb.war</source>
+	                                                <outputDirectory>usr/local/tomcat/webapps</outputDirectory>
+	                                                <destName>ROOT.war</destName>
+	                                            </file>
+	                                        </files>
+	                                    </inline>
+		                            </assembly>
+		                            <tags>
+		                                <tag>${project.version}</tag>
+		                            </tags>
+		                        </build>
+		                    </image>
+		                </images>
+		            </configuration>
+		        </plugin>
+				<plugin>
+		        <groupId>org.codehaus.mojo</groupId>
+		        <artifactId>exec-maven-plugin</artifactId>
+		        <executions>
+		            <execution>
+		                <id>deploy</id>
+		                <phase>deploy</phase>
+		                <goals>
+		                    <goal>exec</goal>
+		                </goals>
+		            </execution>
+		        </executions>
+		        <configuration>
+		        	<arguments>
+		        		<!-- namespace -->
+		        		<argument>dev-sigea-frontend</argument>
+		        		<!-- nome deployment -->
+		        		<argument>sigea</argument>
+		        		<!-- nome container -->
+		        		<argument>sigea</argument>
+		        		<!-- immagine -->
+		        		<argument>registry.ect.regione.puglia.it/sigea-dev/${project.name}:${project.version}</argument>
+		        	</arguments>
+		            <executable>kubernetes/k8s-deploy-wsl.bat</executable>
+		        </configuration>
+		    </plugin>
+			</plugins>
+		<!--  </pluginManagement>-->
+		
+	</build>
+</project>

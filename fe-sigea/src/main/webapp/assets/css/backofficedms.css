@@ -1,0 +1,257 @@
+ul.country-list { z-index:99999;}
+input#telefono { padding-left: 53px !important;}
+
+div.validtable {padding:15px 25px;}
+div.validtable h4 {padding:15px 10px; font-weight:bold; color:#006db0;}
+div.validlabel { 
+	width: 50%; float: left; font-weight:bold; font-size: 14px; 
+	background-color: #efefef; margin-right: 25px; padding:5px;
+}
+span.validvalue { font-size: 14px;}
+div.validlink {padding:10px;}
+h4.validtitleckekbox {font-size: 16px; color: #000000 !important; line-height: 22px; 
+padding:0px !important; background-color: #efefef; font-size: 14px;}
+.col-md-1.Input , .col-md-2.Input , .col-md-3.Input , .col-md-4.Input, 
+.col-md-5.Input , .col-md-6.Input, .col-md-7.Input, .col-md-8.Input, .col-md-9.Input, .col-md-10.Input, .col-md-11.Input, .col-md-12.Input
+ {padding-bottom:20px;}
+
+table.table.table-striped.table-bordered {font-size:16px; pading-right:30px; background-color:#ffffff; }
+table.table.table-striped.table-bordered > thead > tr > th {
+line-height: 25px !important; }
+
+
+/* Inizio box overlay inserisci segnalazione*/
+
+/* @media (min-width: 768px){
+.modal-dialog {
+    width: 840px !important;    
+    margin: 120px auto;
+	}
+} */
+
+.boxsegnalazioneleft {font-size:15px; margin-bottom:15px;}
+.boxsegnalazioneright {
+	font-size:15px; margin-bottom:15px; border: 1px solid #999999; 
+	background-color:#ffffff; text-align:right; float:right; width:90%; padding:10px;
+}
+/* fine box overlay inserisci segnalazione*/
+
+div.selectize-control.form-control.Input-text.single {padding:0px !important; 
+/* border:0px !important; */
+}
+
+
+.btn.btn-primary.icons {
+	font-size: 24px;
+	background: transparent;
+    color: #337AB7 !important;
+    width:100%;	
+    margin: 0px;
+    padding:0px;
+    border: none;
+    outline: none;
+    color: #337AB7;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+div.boxnote {background-color: #f2f2f2; border-radius: 5px; margin:10px; padding:10px;}
+button.btn.btn-primary.aggiungi {
+	background: #fff;
+    border: 1px solid #0075bf;
+    outline: none;
+    color: #0075bf !important;
+    text-shadow: none!important;
+    margin: 5px 5px 5px 5px;
+    padding: 6px 15px;
+    border-radius: 0;	
+}
+div.boxfullnote {height:450px; overflow-y: auto;  font-size: 16px;}
+
+button.btn.btn-primary.salvanote {
+	background: #ffffff;	
+    border: 1px solid green;
+    outline: none;
+    color: green!important;
+    text-shadow: none!important;
+    margin: 5px 5px 5px 5px;
+    padding: 6px 15px;
+    border-radius: 0;	
+}
+button.btn.btn-primary.cancella {
+	background: #fff !important;
+    border: 1px solid #0075bf;
+    outline: none;
+    color: #0075bf !important;
+    text-shadow: none!important;
+    padding: 6px 15px;
+    border-radius: 4;	
+}
+a.testExcel {
+	
+	font-size: 15px; 
+	background-color: #ffffff; 
+	margin: 5px 0px 0px 0px!important; 
+	border: 1px solid #000000;
+	border-radius: 0px;
+	color:green;	
+}
+/* .scegliere {
+    z-index: 9;
+} */
+
+li.paginate_button.active a:hover { color: #000 !important;}
+
+
+button, input, optgroup, select, textarea {
+    font-family: 'Titillium Web', sans-serif !important;
+}
+#dataProblema {text-align: right;}
+
+
+#testoNota{
+-webkit-box-shadow: none;
+white-space: pre-wrap; 
+width:100%; 
+padding:15px; 
+border:0px !important;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, 
+.pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #0b79bf;
+    border-color: #0b79bf;
+}
+
+li.paginate_button.active:hover {color:#000;}
+
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 1px solid #0b79bf;
+}
+
+table.dataTable thead>tr>th.sorting_asc, th.sorting_disabled, 
+table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting, 
+table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, 
+table.dataTable thead>tr>td.sorting {
+    color: #0b79bf;
+
+}
+
+.table tbody tr td {
+    font-weight: normal !important;
+}
+div#info {
+	margin:0px !important;
+	white-space: normal !important;
+}
+	
+	
+	
+	
+div.boxnote .col-md-2, div.boxnote .col-md-4, div.boxnote .col-md-6 {font-size:15px;}
+
+
+/* div#ui-datepicker-div {top:130px !important;}
+
+
+ */
+
+div#scrolling-x::-webkit-scrollbar, div.dataTables_scrollBody::-webkit-scrollbar, div.scrolling-xt::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background-color: #FFFFFF;
+}
+
+div#scrolling-x::-webkit-scrollbar-thumb, div.dataTables_scrollBody::-webkit-scrollbar-thumb, div.scrolling-xt::-webkit-scrollbar-thumb  {
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+	background-color: #f2f2f2;
+}
+
+div#scrolling-x::-webkit-scrollbar-track, div.dataTables_scrollBody::-webkit-scrollbar-track, div.scrolling-xt::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+	border-radius: 5px;
+	background-color: #FFFFFF;
+}
+
+div#scrolling-x::-webkit-scrollbar, div.dataTables_scrollBody::-webkit-scrollbar, div.scrolling-xt::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background-color: #FFFFFF;
+}
+
+div#scrolling-x::-webkit-scrollbar-thumb, div.dataTables_scrollBody::-webkit-scrollbar-thumb, div.scrolling-xt::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+	background-color: #f2f2f2;
+}
+
+div#scrolling-xt::-webkit-scrollbar, , div.dataTables_scrollBody::-webkit-scrollbar, div.scrolling-xt::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background-color: #FFFFFF;
+}
+
+div#scrolling-xt::-webkit-scrollbar-thumb, div.dataTables_scrollBody::-webkit-scrollbar-thumb, div.scrolling-xt::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+	background-color: #0b79bf;
+}
+
+div#scrolling-xt::-webkit-scrollbar-track, div.dataTables_scrollBody::-webkit-scrollbar-track, div.scrolling-xt::-webkit-track{
+	-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+	border-radius: 5px;
+	background-color: #FFFFFF;
+}
+
+div#scrolling-xt::-webkit-scrollbar, div.dataTables_scrollBody::-webkit-scrollbar, div.scrolling-xt::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background-color: #FFFFFF;
+}
+
+div#scrolling-xt::-webkit-scrollbar-thumb, div.dataTables_scrollBody::-webkit-scrollbar-thumb, div.scrolling-xt::-webkit-scrolling-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+	background-color: #0b79bf;
+}
+
+
+div#topbachecahome
+{
+	font-size: 15px;
+    line-height: 14px;
+	background:#0b79bf; 
+	padding:15px 10px; 
+	margin:0px; 
+	color:#fff;
+	border-radius: 5px 5px 0px 0px;
+	
+}
+
+ table#t_segnalazioni_sr > tbody > tr > td,
+ table#t_cancellazione_mov > tbody > tr > td,
+ table#t_cancellazione_archivio > tbody > tr > td,
+ table#t_cambio_spot1 > tbody > tr > td,
+ table#t_cambio_spot2 > tbody > tr > td,
+ table#t_modifica_ape > tbody > tr > td
+ 
+ 
+ 
+  {
+	height:100px;
+} 
+
+.close {color:#fff;  opacity: 1;}
+
+div.listaSegnalazioni, div.listaSegnalazioniSPOT, div.listaSegnalazioniMA, div.listaSegnalazioniCM { 
+	font-size:15px; word-wrap:break-word;
+}
+
+ 

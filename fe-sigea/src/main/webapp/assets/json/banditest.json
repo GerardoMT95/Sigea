@@ -1,0 +1,50 @@
+[
+  {
+ 	"bandoId": 1,
+    "progettoId": 334435,
+    "titoloProgetto": "1Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis", 
+	"titoloBando": "1Bando Triennale Spettacolo", 
+	"nomeOrganizzazione": "1Lorem ipsum dolor sit amet, consectetur adipiscing lo", 
+    "personale": true
+  },
+  {
+ 	"bandoId": 2,
+    "progettoId": 363333,
+    "titoloProgetto": "2Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis", 
+	"titoloBando": "2Bando Triennale Spettacolo", 
+	"nomeOrganizzazione": "2Lorem ipsum dolor sit amet, consectetur adipiscing lo", 
+    "personale": true
+  },
+  {
+ 	"bandoId": 3,
+    "progettoId": 224323,
+    "titoloProgetto": "3Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis", 
+	"titoloBando": "3Bando Triennale Spettacolo", 
+	"nomeOrganizzazione": "3Lorem ipsum dolor sit amet, consectetur adipiscing lo", 
+    "personale": true
+  },  
+  {
+ 	"bandoId": 4,
+    "progettoId": 334435,
+    "titoloProgetto": "", 
+	"titoloBando": "4Bando Triennale Spettacolo", 
+	"nomeOrganizzazione": "", 
+    "personale": false
+  },
+  {
+ 	"bandoId": 2,
+    "progettoId": 363333,
+    "titoloProgetto": "", 
+	"titoloBando": "2Bando Triennale Spettacolo", 
+	"nomeOrganizzazione": "", 
+    "personale": false
+  },
+    {
+ 	"bandoId": 3,
+    "progettoId": 224323,
+    "titoloProgetto": "", 
+	"titoloBando": "3Bando Triennale Spettacolo", 
+	"nomeOrganizzazione": "", 
+    "personale": false
+  }
+]

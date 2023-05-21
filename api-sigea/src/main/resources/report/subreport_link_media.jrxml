@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final utlizzo versione della libreria JasperReports6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreport_media" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1f16005e-ed0f-430f-89bd-81b7a728c106">
+	<property name="net.sf.jasperreports.image.dpi" value="72"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="path" class="java.lang.String">
+		<fieldDescription><![CDATA[path]]></fieldDescription>
+	</field>
+	<field name="didascalia" class="java.lang.String">
+		<fieldDescription><![CDATA[didascalia]]></fieldDescription>
+	</field>
+	<field name="credits" class="java.lang.String">
+		<fieldDescription><![CDATA[credits]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[nome]]></fieldDescription>
+	</field>
+	<field name="dimensione" class="java.lang.String">
+		<fieldDescription><![CDATA[dimensione]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="105" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="2" width="555" height="20" uuid="5a94e29a-1ab1-4d45-95b5-b12387652300">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineColor="#0075BE"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{path}.length()>0?"<b>Link:</b> " +$F{path}:"<b>Link:</b> N.D."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="26" width="555" height="20" uuid="29c47e5b-e086-4728-b537-1f4d67db74aa">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineColor="#0075BE"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}.length()>0?"<b>Titolo:</b> " + $F{nome}:"<b>Titolo:</b> N.D."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="50" width="555" height="20" uuid="2c40ca48-543c-4ff9-8d73-8eb3f6f5dd67">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineColor="#0075BE"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{didascalia}.length()>0?"<b>Didascalia:</b> " + $F{didascalia}:"<b>Didascalia:</b> N.D."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="74" width="555" height="20" isPrintInFirstWholeBand="true" uuid="5ebc5c1d-3839-4514-88e4-ffdb14e848a2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineColor="#0075BE"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{credits}!=null && $F{credits}.length()>0?"<b>Credits:</b> " + $F{credits}:"<b>Credits:</b> N.D."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

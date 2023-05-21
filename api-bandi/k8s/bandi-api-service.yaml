@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bandi-api-svc
+spec:
+  type: ClusterIP
+  ports:
+  - name: bandi-api
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: bandi-api
+    env: dev
+    tier: backend
+    module: api

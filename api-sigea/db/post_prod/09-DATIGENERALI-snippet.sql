@@ -1,0 +1,1 @@
+ALTER TABLE sigec.t_sigea_datigenerali ALTER COLUMN SNIPPET TYPE VARCHAR(350);

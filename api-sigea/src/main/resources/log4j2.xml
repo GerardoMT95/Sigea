@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+	<Properties>
+		<Property name="LOG_PATTERN">
+			%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} -- [%t] %-40.40c{1.} : %m%n%ex
+		</Property>
+	</Properties>
+	<Appenders>
+		<!-- Rolling File Appender -->
+		<RollingFile name="FileAppender" fileName="logs/SIGECapiService.log"
+			filePattern="logs/SIGECapiService-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="it.indra.SIGECapiService" level="info" additivity="false">
+			<AppenderRef ref="FileAppender" />
+		</Logger>
+		<Logger name="org.hibernate" level="info" additivity="false">
+			<AppenderRef ref="FileAppender" />
+		</Logger>
+		<Logger name="org.hibernate.SQL" level="info" additivity="false">
+  			<AppenderRef ref="ConsoleAppender" />
+		</Logger>
+		<Logger name="org.hibernate.type" level="info" additivity="false">
+  			<AppenderRef ref="ConsoleAppender" />
+		</Logger>
+		<Root level="info">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="FileAppender" />
+		</Root>
+	</Loggers>
+	
+</Configuration>

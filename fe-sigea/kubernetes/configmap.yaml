@@ -1,0 +1,38 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: sigea-cm
+data:
+  SigeaWeb.properties: |
+    url.login=https:/#HIDDEN#/digitalmanagementsystem/accedi
+    url.dms=https://#HIDDEN#/digitalmanagementsystem/
+    url.logout=https://#HIDDEN#/global/logout
+    
+    # URL servizi    
+    urlSIGEC=https://#HIDDEN#/t/puglia.it/sigec-api/v1/    
+    urlDmsServices=https://#HIDDEN#/t/puglia.it/DmsServices/v1/
+    urlVipServices=https://#HIDDEN#/vip-rest/api/    
+    urlTerritorialServices=https://#HIDDEN#/t/puglia.it/adminarea-api/v1/
+    urlUtentiServices=https://#HIDDEN#/t/puglia.it/UtentiServices/v1/
+    urlBandiServices=https://#HIDDEN#/t/puglia.it/bandi-api/v1/
+    
+    ### TODO: METTERE NEI SECRET LA DOPPIA COPPIA DI CREDENZIALI SUCCESSIVE: ####
+    
+    # CREDENZIALI APPLICATION SIGEA
+    WSO2.defaultApplication_clientId=#HIDDEN#
+    WSO2.defaultApplication_clientSecret=#HIDDEN#
+    
+    application.auth.openidconnect.loginUrl=/login    
+    #TEST
+    application.auth.openidconnect.clientId=#HIDDEN#
+    application.auth.openidconnect.clientSecret=#HIDDEN#
+    application.auth.openidconnect.redirectUri=https://#HIDDEN#/oidc/callback
+    
+    application.auth.openidconnect.accessTokenUri=https://#HIDDEN#/oauth2/token
+    application.auth.openidconnect.userAuthorizationUri=https://#HIDDEN#/oauth2/authorize
+    application.auth.openidconnect.issuer=https://#HIDDEN#/oauth2/token
+    application.auth.openidconnect.jwksUri=https://#HIDDEN#/t/puglia.it/oauth2/jwks
+    application.auth.openidconnect.scopes=openid,email
+    # In Produzione deve essere impostato a false
+    application.auth.openidconnect.disableSsl= true    
+    application.auth.openidconnect.urlUserDetailsProvider=https://#HIDDEN#/t/puglia.it/UtentiServices/v1/users/user

@@ -1,0 +1,2 @@
+UPDATE sigec.t_sigea_ruoli SET permessi='{"creaEvento": true, "filtroGestisci": true, "filtroRedattore": true, "filtroEventoSeeAll": true, "filtroSegnalazioneSeeAll": true, "inredazioneVIP":true}'::jsonb WHERE ruolo_id='REDATTORE';
+UPDATE sigec.t_sigea_ruoli SET permessi='{"creaEvento": true, "filtroGestisci": true, "inredazioneVIP": true, "filtroRedattore": true, "pubblicazioneB2B": true, "pubblicazioneVIP": true, "filtroEventoSeeAll": true, "pubblicazioneB2BDMS": true, "filtroSegnalazioneSeeAll": true}'::jsonb WHERE ruolo_id='CAPOREDATTORE';

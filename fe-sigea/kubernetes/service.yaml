@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sigea-svc
+spec:
+  type: ClusterIP
+  ports:
+  - name: sigea
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+  selector:
+    module: mvc
