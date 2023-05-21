@@ -15,7 +15,7 @@ sonar.organization=gerardomt95
 
 
 # Path is relative to the sonar-project.properties file. Replace "\" by "/" on Windows.
-sonar.sources=trasmissioni/frontend/src, trasmissioni/backend/src/main, sportello/frontend/frontoffice/src, sportello/frontend/backoffice/src, sportello/backend/src/main
+sonar.sources=api-bandi\src\main, api-sigea\src\main, bandicommons\src, fe-sigea\src\main, persistence-sigea\src\main, sigeacommons\src
 #sonar.java.binaries=build
 sonar.java.binaries=.
 #sonar.java.libraries=*.jar
